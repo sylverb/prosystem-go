@@ -28,7 +28,11 @@
 #include <stdint.h>
 
 #include <boolean.h>
+#ifndef TARGET_GNW
 #include <retro_inline.h>
+#else
+#define INLINE inline
+#endif
 
 #ifdef __cplusplus
 extern "C" {

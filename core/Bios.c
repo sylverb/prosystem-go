@@ -24,14 +24,17 @@
 // ----------------------------------------------------------------------------
 #include <stdlib.h>
 
+#ifndef TARGET_GNW
 #include <streams/file_stream.h>
+#endif
 #include "Bios.h"
 #include "Memory.h"
 
 /* Forward declaration */
+#ifndef TARGET_GNW
 int64_t rfread(void* buffer,
    size_t elem_size, size_t elem_count, RFILE* stream);
-
+#endif
 
 #define BIOS_SOURCE "Bios.cpp"
 
@@ -45,6 +48,7 @@ static uint16_t bios_size = 0;
 // ----------------------------------------------------------------------------
 bool bios_Load(const char *filename)
 {
+#ifndef TARGET_GNW
    RFILE *file;
    if(!filename || filename[0] == '\0')
       return false;
@@ -67,7 +71,7 @@ bool bios_Load(const char *filename)
    }
 
    filestream_close(file);
-
+#endif
    return true; 
 }
 
@@ -84,8 +88,10 @@ bool bios_IsLoaded(void)
 // ----------------------------------------------------------------------------
 void bios_Release(void)
 {
+#ifndef TARGET_GNW
    if (bios_data)
       free(bios_data);
+#endif
    bios_data = NULL;
    bios_size = 0;
 }

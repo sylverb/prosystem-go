@@ -345,11 +345,13 @@ bool cartridge_IsLoaded(void)
 // ----------------------------------------------------------------------------
 void cartridge_Release(bool persistent_data)
 {
+#ifndef TARGET_GNW
    if (!persistent_data)
    {
       if (cartridge_buffer)
          free(cartridge_buffer);
    }
+#endif
    cartridge_buffer = NULL;
    cartridge_size   = 0;
 }
