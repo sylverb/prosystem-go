@@ -1,3 +1,8 @@
+#ifdef TARGET_GNW
+#include "build/config.h"
+#endif
+
+#if !defined(TARGET_GNW) || (defined(TARGET_GNW) &&  defined(ENABLE_EMULATOR_A7800))
 // ----------------------------------------------------------------------------
 //   ___  ___  ___  ___       ___  ____  ___  _  _
 //  /__/ /__/ /  / /__  /__/ /__    /   /_   / |/ /
@@ -375,3 +380,5 @@ void pokey_Clear(void)
    for(index = 0; index < POKEY_BUFFER_SIZE; index++)
       pokey_buffer[index] = 0;
 }
+
+#endif
