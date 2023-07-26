@@ -35,7 +35,7 @@ extern "C" {
 
 extern void prosystem_Reset(void);
 extern void prosystem_ExecuteFrame(const uint8_t* input);
-extern bool prosystem_Save(char *buffer, bool compress);
+extern int prosystem_Save(char *buffer);
 extern bool prosystem_Load(const char *buffer);
 extern void prosystem_Close(bool persistent_data);
 

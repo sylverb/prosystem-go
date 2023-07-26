@@ -139,7 +139,7 @@ void prosystem_ExecuteFrame(const uint8_t* input)
 // ----------------------------------------------------------------------------
 // Save
 // ----------------------------------------------------------------------------
-bool prosystem_Save(char *buffer, bool compress)
+int prosystem_Save(char *buffer)
 {
    uint32_t size = 0;
    uint32_t index;
@@ -177,7 +177,7 @@ bool prosystem_Save(char *buffer, bool compress)
       size += 16384;
    }
 
-   return true;
+   return size;
 }
 
 // ----------------------------------------------------------------------------

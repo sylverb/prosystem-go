@@ -378,7 +378,7 @@ size_t retro_serialize_size(void)
 
 bool retro_serialize(void *data, size_t size)
 { 
-   return prosystem_Save((char*)data, false);
+   return prosystem_Save((char*)data);
 }
 
 bool retro_unserialize(const void *data, size_t size)
