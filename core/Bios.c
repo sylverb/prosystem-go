@@ -1,8 +1,3 @@
-#ifdef TARGET_GNW
-#include "build/config.h"
-#endif
-
-#if !defined(TARGET_GNW) || (defined(TARGET_GNW) &&  defined(ENABLE_EMULATOR_A7800))
 // ----------------------------------------------------------------------------
 //   ___  ___  ___  ___       ___  ____  ___  _  _
 //  /__/ /__/ /  / /__  /__/ /__    /   /_   / |/ /
@@ -109,5 +104,3 @@ void bios_Store(void)
    if(bios_data != NULL && bios_enabled)
       memory_WriteROM(65536 - bios_size, bios_size, bios_data);
 }
-
-#endif

@@ -1,8 +1,3 @@
-#ifdef TARGET_GNW
-#include "build/config.h"
-#endif
-
-#if !defined(TARGET_GNW) || (defined(TARGET_GNW) &&  defined(ENABLE_EMULATOR_A7800))
 // ----------------------------------------------------------------------------
 //   ___  ___  ___  ___       ___  ____  ___  _  _
 //  /__/ /__/ /  / /__  /__/ /__    /   /_   / |/ /
@@ -263,5 +258,3 @@ void hash_Compute(char *s, const uint8_t* source, uint32_t length)
 
    sprintf(s, "%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x", digest[0], digest[1], digest[2], digest[3], digest[4], digest[5], digest[6], digest[7], digest[8], digest[9], digest[10], digest[11], digest[12], digest[13], digest[14], digest[15]);
 }
-
-#endif
